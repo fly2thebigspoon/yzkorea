@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>유중코리아 Youzhong Korea | 나노임프린트 기반 마이크로·나노 구조 맞춤 제작</title>
+<meta name="description" content="원하는 구조로, 약속한 날짜에, 검증된 품질로. 유중나노는 나노임프린트 기반 NGS 기판, 미세유체 칩, 광학 소자를 맞춤 제작합니다.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="유중코리아 Youzhong Korea">
+<meta property="og:description" content="나노임프린트 기반 마이크로·나노 구조 맞춤 제작. 표준품 5일, 맞춤 제작 3주.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem("yz-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}</script>
+<script defer src="js/main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#hero" aria-label="유중나노 홈">
+      <img class="logo-light" src="images/logo.png" alt="유중나노 yz-micro nano" width="138" height="48">
+      <img class="logo-dark" src="images/logo-reverse.svg" alt="유중나노 yz-micro nano" width="148" height="48">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="메뉴 열기"><span></span><span></span></button>
+    <nav id="nav" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li class="has-sub">
+          <a href="#products">Products</a>
+          <ul class="sub" aria-label="제품">
+            <li class="sub-h">NGS</li>
+            <li><a href="#ngs-substrate">NGS 나노웰 기판</a></li>
+            <li><a href="#ngs-microfluidic">NGS 미세유체 칩</a></li>
+            <li class="sub-h">광학 소자</li>
+            <li><a href="#products" data-open="dlg-mla">마이크로렌즈 어레이</a></li>
+            <li><a href="#products" data-open="dlg-metalens">메타렌즈</a></li>
+            <li class="sub-h">Customizing</li>
+            <li><a href="#products" data-open="dlg-c1">특수 마이크로·나노 구조</a></li>
+            <li><a href="#products" data-open="dlg-c2">소프트 몰드 복제</a></li>
+            <li><a href="#products" data-open="dlg-c3">박막 증착</a></li>
+            <li><a href="#products" data-open="dlg-c4">점착 방지(이형) 처리</a></li>
+          </ul>
+        </li>
+        <li><a href="#facilities">Production &amp; R&amp;D</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO: flow-cell sequencing imaging -->
+  <section class="hero" id="hero" aria-label="유중나노 소개">
+    <canvas id="flowcell" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>원하는 구조로,<br>약속한 날짜에,<br>검증된 품질로.</h1>
+        <p class="lead">나노임프린트 기반 마이크로·나노 구조 맞춤 제작. 유중나노는 설계 협의부터 가공, 검사, 출하까지 한 팹에서 책임집니다.</p>
+        <div class="cta">
+          <a class="btn btn--solid" href="#contact">맞춤 제작 문의</a>
+          <a class="btn btn--line" href="#products">제품 보기</a>
+        </div>
+      </div>
+
+      <div class="readout" aria-hidden="true">
+        <div class="ro-head"><span>Flow cell imaging</span><span id="cyc">Cycle 001</span></div>
+        <p class="ro-read" id="read"></p>
+        <div class="ro-meta"><span>Cluster <b id="cl">#0000</b></span><span>Pitch 600 nm</span></div>
+        <div class="ro-legend"><i class="b-a">A</i><i class="b-c">C</i><i class="b-g">G</i><i class="b-t">T</i><span>Illustration</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PROMISES -->
+  <section class="promises" aria-label="유중나노의 약속">
+    <div class="wrap promise-grid">
+      <div class="promise">
+        <p class="p-label">맞춤 제작 <span>Custom</span></p>
+        <p class="p-fig">고객 지정 공정</p>
+        <p class="p-text">포토마스크 설계부터 마스터·소프트 몰드, 표면 처리, 본딩까지 고객이 지정한 공정과 사양으로 제작합니다.</p>
+        <p class="p-foot">4 / 6 / 8인치 웨이퍼, 시제품부터 양산까지</p>
+      </div>
+      <div class="promise">
+        <p class="p-label">납기 <span>Lead time</span></p>
+        <p class="p-fig">5일 / 3주</p>
+        <p class="p-text">표준품은 5일, 맞춤 제작은 3주 안에 출하합니다. 사양 검토 결과는 1–2일 안에 회신합니다.</p>
+        <p class="p-foot">본사 출하 기준, 한국까지 운송 기간 별도</p>
+      </div>
+      <div class="promise">
+        <p class="p-label">품질 <span>Quality</span></p>
+        <p class="p-fig">±30 nm</p>
+        <p class="p-text">설계, 가공, 검사, 출하를 한 팹에서 관리합니다. SEM과 공초점 현미경으로 치수를 측정하며, 요청 시 측정 이미지와 수치를 제공합니다.</p>
+        <p class="p-foot">가공 정밀도, NGS 기판 기준</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-t">
+    <div class="wrap">
+      <h2 class="sec-title" id="about-t">About Us</h2>
+
+      <div class="about-grid">
+        <div>
+          <p class="statement">반도체 공정으로 만드는<br>마이크로·나노 구조</p>
+          <div class="about-text">
+            <p>유중나노(yz-micro nano)는 나노임프린트(NIL) 기술을 기반으로 마이크로·나노 구조 소자를 제조하는 반도체 공정 기반 기업입니다. 2015년 설립 이후 중국 장쑤성 난퉁시와 저장성 저우산시에 약 <span class="nb">20,000㎡</span> 규모의 반도체 표준 팹(Fab)을 구축했으며, 세정, 노광, 나노임프린트, 박막 증착, CMP, 식각, 검사·계측까지 전 공정을 자체 라인에서 수행합니다. 누적 설비 투자는 약 5억 위안(약 1,000억 원)입니다.</p>
+            <p>나노임프린트 전문 인력과 중국 내 여러 대학과의 산학연 협력을 바탕으로, 바이오 분석·진단용 칩부터 광학 소자까지 설계 협의, 시제품, 양산을 지원합니다.</p>
+          </div>
+        </div>
+        <figure class="about-photo">
+          <img src="images/home.jpg" alt="유중나노 장쑤성 난퉁 본사 로비" width="602" height="638" loading="lazy" decoding="async">
+          <figcaption>장쑤성 난퉁 본사</figcaption>
+        </figure>
+      </div>
+
+      <dl class="glance">
+        <div><dt>설립</dt><dd>2015년</dd></div>
+        <div><dt>생산 거점</dt><dd>난퉁(장쑤성), 저우산(저장성)</dd></div>
+        <div><dt>팹 규모</dt><dd>약 <span class="nb">20,000㎡</span>, 반도체 표준 팹</dd></div>
+        <div><dt>웨이퍼</dt><dd>4 / 6 / 8인치</dd></div>
+        <div><dt>누적 설비 투자</dt><dd>약 5억 위안(약 1,000억 원)</dd></div>
+        <div><dt>자체 공정</dt><dd>세정, 노광, 나노임프린트, 박막 증착, CMP, 식각, 검사·계측</dd></div>
+      </dl>
+
+      <ul class="areas">
+        <li>
+          <h3>바이오·생명과학</h3>
+          <p>유전체 분석, 진단, 세포 연구에 필요한 정밀 칩과 기판을 고객 사양에 맞춰 제작합니다. 차세대 염기서열 분석(NGS), 체외진단, 세포·분자 분석, 장기칩 등 생체모사 모델 연구에 적용됩니다.</p>
+        </li>
+        <li>
+          <h3>광학·포토닉스</h3>
+          <p>마이크로렌즈 어레이(MLA), 메타렌즈, 와이어 그리드 편광자(WGP), 회절광학소자(DOE), 디퓨저, 그레이팅, V-groove. 광통신과 소비자 가전(IT 기기) 분야에 적용됩니다.</p>
+        </li>
+        <li>
+          <h3>맞춤 제작 서비스</h3>
+          <p>마스터 몰드·소프트 몰드 제작부터 시제품, 양산까지 고객 지정 공정으로 대응합니다.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section section--white" id="products" aria-labelledby="products-t">
+    <div class="wrap">
+      <h2 class="sec-title" id="products-t">Products</h2>
+
+      <div class="group">
+        <div class="group-head">
+          <h3>주력 제품</h3>
+          <p>NGS 플로우셀용 기판과 미세유체 칩</p>
+        </div>
+        <div class="tiles">
+
+          <article class="tile" id="ngs-substrate">
+            <figure class="media">
+              <img src="images/NGSjiban.jpg" alt="NGS 나노웰 기판" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+            </figure>
+            <div class="tile-body">
+              <h4>NGS 나노웰 기판</h4>
+              <p class="en">NGS Nanowell Substrate</p>
+              <p class="desc">나노임프린트 공정으로 특수 광학 유리 기판 위에 정밀한 나노웰 어레이를 구현합니다. 규칙적으로 배열된 웰마다 DNA 단편이 고정되어 수백만 개의 클러스터로 증폭되며, 인접 웰 간 신호 크로스토크를 억제해 시퀀싱 정확도를 크게 높입니다. 2세대 NGS 패턴드 플로우셀의 핵심 부품입니다.</p>
+              <dl class="specs">
+                <div><dt>웨이퍼</dt><dd>8 / 6 / 4인치</dd></div>
+                <div><dt>홀 직경</dt><dd>100 nm 이상</dd></div>
+                <div><dt>종횡비</dt><dd>5 : 1</dd></div>
+                <div><dt>기판</dt><dd>특수 광학 유리</dd></div>
+              </dl>
+              <p class="note">기판 공급을 기본으로, 친수·소수 표면 처리와 본딩은 고객 지정 공정으로 대응합니다.</p>
+              <a class="more" href="#contact" data-product="NGS 나노웰 기판">이 제품 문의하기</a>
+            </div>
+          </article>
+
+          <article class="tile" id="ngs-microfluidic">
+            <figure class="media media--pair">
+              <span class="pair-main"><img src="images/NGSweiliukong_chip.jpg" alt="NGS 미세유체 칩 제품" loading="lazy" decoding="async" onload="this.classList.add('is-ready')"></span>
+              <span class="pair-sub">
+                <img src="images/NGSweiliukong.png" alt="미세 구조 단면 SEM 이미지" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="pair-cap">단면 SEM</span>
+              </span>
+            </figure>
+            <div class="tile-body">
+              <h4>NGS 미세유체 칩</h4>
+              <p class="en">Microfluidic Chip</p>
+              <p class="desc">미세 채널로 극미량의 유체를 처리하고 제어하는 미세유체(Microfluidics) 칩입니다. 소형화와 집적화에 유리해 유기 합성, 마이크로 리액터, 화학 분석, 임상 진단 기기, 장기칩(Organ-on-a-Chip) 등 체외 생체모사 모델에 폭넓게 쓰입니다. 나노임프린트 공정으로 나노 챔버와 마이크로 채널을 제작합니다.</p>
+              <dl class="specs">
+                <div><dt>나노 챔버 깊이</dt><dd>100 nm</dd></div>
+                <div><dt>채널 깊이</dt><dd>20 μm</dd></div>
+                <div><dt>공정</dt><dd>나노임프린트</dd></div>
+              </dl>
+              <a class="more" href="#contact" data-product="NGS 미세유체 칩">이 제품 문의하기</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="group group--more">
+        <div class="group-head">
+          <h3>광학 소자와 맞춤 제작</h3>
+          <p>제품명을 누르면 상세 사양이 열립니다.</p>
+        </div>
+        <div class="plist-wrap">
+          <p class="plist-h">광학 소자</p>
+          <ul class="plist">
+            <li>
+              <button type="button" class="pitem" data-open="dlg-mla">
+                <span class="pthumb"><img src="images/weitoujing.jpg" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>마이크로렌즈 어레이</b><span>Microlens Array (MLA)</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pitem" data-open="dlg-metalens">
+                <span class="pthumb"><img src="images/chaotoujing.png" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>메타렌즈</b><span>Metalens (Metasurface Lens)</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+          </ul>
+          <p class="plist-h">Customizing <span>맞춤 제작 서비스</span></p>
+          <ul class="plist">
+            <li>
+              <button type="button" class="pitem" data-open="dlg-c1">
+                <span class="pthumb"><img src="images/customizing1.png" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>특수 마이크로·나노 구조 맞춤 제작</b><span>Special Micro/Nano Structure Customizing</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pitem" data-open="dlg-c2">
+                <span class="pthumb"><img src="images/customizing2.jpg" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>소프트 몰드 복제</b><span>Soft Mold Replication</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pitem" data-open="dlg-c3">
+                <span class="pthumb"><img src="images/customizing3.jpg" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>박막 증착</b><span>Thin Film Deposition</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pitem" data-open="dlg-c4">
+                <span class="pthumb"><img src="images/customizing4.jpg" alt="" loading="lazy" decoding="async"></span>
+                <span class="ptext"><b>점착 방지(이형) 처리</b><span>Anti-Sticking Treatment</span></span>
+                <span class="pgo">자세히</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footnote">바이오 분야 제품은 연구용(RUO)으로 공급되며, 임상 진단 목적 사용에는 별도 인허가가 필요합니다.</p>
+    </div>
+  </section>
+
+  <!-- CUSTOM PROCESS -->
+  <section class="section" id="process" aria-labelledby="process-t">
+    <div class="wrap">
+      <h2 class="sec-title" id="process-t">Custom Process</h2>
+      <p class="statement statement--sm">주문 후 출하까지,<br>표준품 5일, 맞춤 제작 3주</p>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <h3>문의</h3>
+          <p>구조, 기판 재질, 수량, 희망 납기를 알려 주세요.</p>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <h3>사양 검토</h3>
+          <p>가공 가능 여부와 일정을 회신합니다.</p>
+          <span class="step-t">1–2일</span>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <h3>설계</h3>
+          <p>포토마스크와 마스터 몰드를 설계합니다.</p>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <h3>가공</h3>
+          <p>나노임프린트, 식각, 박막 증착, 표면 처리를 진행합니다.</p>
+        </li>
+        <li>
+          <span class="step-n">5</span>
+          <h3>검사·출하</h3>
+          <p>SEM 등으로 치수를 확인한 뒤 출하합니다.</p>
+          <span class="step-t">표준품 5일 / 맞춤 3주</span>
+        </li>
+      </ol>
+      <p class="footnote footnote--tight">납기는 본사 출하 기준이며, 한국까지의 운송 기간은 별도입니다.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTION & R&D -->
+  <section class="section section--dark" id="facilities" aria-labelledby="fac-t">
+    <div class="wrap">
+      <h2 class="sec-title" id="fac-t">Production &amp; R&amp;D</h2>
+
+      <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="생산·연구 설비">
+        <div class="carousel-top">
+          <p class="carousel-lead">세정부터 검사·계측까지,<br>하나의 Fab에서 이어지는 공정</p>
+          <div class="carousel-ctl">
+            <span class="count" data-count aria-live="off">1 / 6</span>
+            <button type="button" data-prev aria-label="이전 슬라이드"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+            <button type="button" data-pause aria-label="자동 재생 일시정지" aria-pressed="false">
+              <svg class="i-pause" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M6.5 4.5v11M13.5 4.5v11" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <svg class="i-play" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M6.5 4.5 15 10l-8.5 5.5z" fill="currentColor"/></svg>
+            </button>
+            <button type="button" data-next aria-label="다음 슬라이드"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          </div>
+        </div>
+
+        <div class="viewport">
+          <div class="track">
+
+            <div class="slide" role="tabpanel" id="slide-0" aria-labelledby="tab-0">
+              <figure class="frame">
+                <img src="images/keshi.jpg" alt="식각 설비" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>Etching</h3>
+                <ul class="eq">
+                  <li>ICP etcher<b>GSE C200</b></li>
+                  <li>Dry etcher<b>HSE M200</b></li>
+                  <li>Dielectric RIE<b>NMC508</b></li>
+                </ul>
+                <p class="ko">임프린트한 패턴을 기판에 깊이 방향으로 전사하는 식각 공정입니다.</p>
+              </div>
+            </div>
+
+            <div class="slide" role="tabpanel" id="slide-1" aria-labelledby="tab-1">
+              <figure class="frame">
+                <img src="images/jiancha.jpg" alt="주사전자현미경 검사 설비" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>Inspection</h3>
+                <ul class="eq">
+                  <li>SEM<b>ZEISS Sigma 360</b></li>
+                  <li>Confocal microscope</li>
+                  <li>Contact angle meter</li>
+                  <li>Ellipsometer</li>
+                </ul>
+                <p class="ko">패턴 치수, 막 두께, 표면 접촉각을 계측해 출하 전 품질을 확인합니다.</p>
+              </div>
+            </div>
+
+            <div class="slide" role="tabpanel" id="slide-2" aria-labelledby="tab-2">
+              <figure class="frame">
+                <img src="images/dumo.jpg" alt="박막 증착 설비" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>Deposition</h3>
+                <ul class="eq">
+                  <li>ALD</li>
+                  <li>PECVD</li>
+                  <li>PVD<b>Evaporation / Sputtering</b></li>
+                </ul>
+                <p class="ko">절연막과 금속막을 증착해 기능층을 형성합니다.</p>
+              </div>
+            </div>
+
+            <div class="slide" role="tabpanel" id="slide-3" aria-labelledby="tab-3">
+              <figure class="frame">
+                <img src="images/shifa.jpg" alt="습식 공정 설비" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>Wet Process</h3>
+                <ul class="eq">
+                  <li>Wet bench</li>
+                  <li>SPM cleaning</li>
+                </ul>
+                <p class="ko">세정과 친수 표면 처리를 수행하는 습식 공정입니다.</p>
+              </div>
+            </div>
+
+            <div class="slide" role="tabpanel" id="slide-4" aria-labelledby="tab-4">
+              <figure class="frame">
+                <img src="images/nil.jpg" alt="옐로룸의 나노임프린트 설비" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>Nanoimprint</h3>
+                <ul class="eq">
+                  <li>Nanoimprint system</li>
+                  <li>Roll-type nanoimprint system</li>
+                </ul>
+                <p class="ko">접촉식 임프린트 기술을 적용했으며, 웨이퍼는 최대 8인치까지 확장할 수 있습니다.</p>
+              </div>
+            </div>
+
+            <div class="slide" role="tabpanel" id="slide-5" aria-labelledby="tab-5">
+              <figure class="frame">
+                <img src="images/rd.jpg" alt="클린룸 연구개발 현장" loading="lazy" decoding="async" onload="this.classList.add('is-ready')">
+                <span class="brackets" aria-hidden="true"></span>
+              </figure>
+              <div class="cap">
+                <h3>R&amp;D</h3>
+                <ul class="eq">
+                  <li>Optical design</li>
+                  <li>Simulation</li>
+                  <li>Process development</li>
+                </ul>
+                <p class="ko">고객 요구에 맞춘 광학 설계와 시뮬레이션, 공정 개발을 수행합니다.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="설비 선택">
+          <button type="button" role="tab" id="tab-0" aria-controls="slide-0" aria-selected="true">Etching</button>
+          <button type="button" role="tab" id="tab-1" aria-controls="slide-1" aria-selected="false" tabindex="-1">Inspection</button>
+          <button type="button" role="tab" id="tab-2" aria-controls="slide-2" aria-selected="false" tabindex="-1">Deposition</button>
+          <button type="button" role="tab" id="tab-3" aria-controls="slide-3" aria-selected="false" tabindex="-1">Wet Process</button>
+          <button type="button" role="tab" id="tab-4" aria-controls="slide-4" aria-selected="false" tabindex="-1">Nanoimprint</button>
+          <button type="button" role="tab" id="tab-5" aria-controls="slide-5" aria-selected="false" tabindex="-1">R&amp;D</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="contact-t">
+    <div class="wrap">
+      <h2 class="sec-title" id="contact-t">Contact</h2>
+
+      <div class="contact">
+        <div class="contact-info">
+          <h3>구조와 사양을 알려 주시면 1–2일 안에 검토 결과를 회신드립니다.</h3>
+          <dl>
+            <div><dt>회사</dt><dd>유중코리아<br><span>Youzhong Korea</span></dd></div>
+            <div><dt>전화</dt><dd><a href="tel:+82314310209">031-431-0209</a></dd></div>
+            <div><dt>팩스</dt><dd>0508-934-9808</dd></div>
+            <div><dt>이메일</dt><dd><a href="mailto:sales@yz-micronano.co.kr">sales@yz-micronano.co.kr</a></dd></div>
+            <div><dt>주소</dt><dd>경기도 시흥시 배곧동 294-1<br>골드테크노밸리 406호<br><a class="map" data-address="경기도 시흥시 배곧동 294-1 골드테크노밸리" href="https://map.naver.com/" target="_blank" rel="noopener">네이버 지도에서 보기</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="contact-form" id="inquiry" novalidate>
+          <div class="row">
+            <label>성함<input name="name" type="text" autocomplete="name" required></label>
+            <label>회사·기관명<input name="org" type="text" autocomplete="organization"></label>
+          </div>
+          <div class="row">
+            <label>이메일<input name="email" type="email" autocomplete="email" required></label>
+            <label>연락처<input name="tel" type="tel" autocomplete="tel"></label>
+          </div>
+          <label>관심 분야
+            <select name="interest">
+              <option>NGS 나노웰 기판</option>
+              <option>NGS 미세유체 칩</option>
+              <option>마이크로렌즈 어레이</option>
+              <option>메타렌즈</option>
+              <option>맞춤 제작 서비스</option>
+              <option>기타 문의</option>
+            </select>
+          </label>
+          <label>문의 내용
+            <textarea name="message" rows="5" placeholder="필요한 구조와 치수, 기판 재질, 수량, 희망 납기를 적어 주세요." required></textarea>
+          </label>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <div class="form-foot">
+            <button class="btn btn--solid" type="submit">메일로 문의하기</button>
+            <p>버튼을 누르면 사용 중인 메일 프로그램이 열리고, 입력한 내용이 sales@yz-micronano.co.kr 앞으로 작성됩니다.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- product detail dialogs -->
+<dialog class="pdlg" id="dlg-mla" aria-labelledby="dlg-mla-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/weitoujing.jpg" alt="마이크로렌즈 어레이" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-mla-t">마이크로렌즈 어레이</h2>
+        <p class="en">Microlens Array (MLA)</p>
+        <p class="desc">굴절형과 회절형으로 나뉩니다. 회절형 마이크로렌즈 어레이는 파장 수준의 3차원 릴리프 구조로 광파를 변조·변환하며, 얇고 가벼우면서 설계 자유도가 높습니다. 파면 센싱, 집광, 빔 셰이핑 등 다양한 광학 시스템의 기능 소자로 쓰입니다.</p>
+        <dl class="specs">
+          <div><dt>웨이퍼</dt><dd>8 / 6 / 4인치</dd></div>
+          <div><dt>종횡비(AR)</dt><dd>0.08 – 0.2</dd></div>
+          <div><dt>사양</dt><dd>고객 요구에 맞춰 설계</dd></div>
+        </dl>
+        <a class="more" href="#contact" data-product="마이크로렌즈 어레이">이 제품 문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<dialog class="pdlg" id="dlg-metalens" aria-labelledby="dlg-metalens-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/chaotoujing.png" alt="메타렌즈 필러 구조 SEM 이미지" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-metalens-t">메타렌즈</h2>
+        <p class="en">Metalens (Metasurface Lens)</p>
+        <p class="desc">메타표면(Metasurface) 기반의 평면 렌즈입니다. 표면 나노 구조의 형상, 회전 방향, 높이를 정밀하게 설계해 빛의 위상, 진폭, 편광을 제어하고 목적한 결상 및 광학 효과를 구현합니다. 고객 요구에 맞춘 광학 설계와 시뮬레이션 기반 특성 평가를 거쳐 전용 메타렌즈를 제작합니다.</p>
+        <dl class="specs">
+          <div><dt>웨이퍼</dt><dd>8 / 6 / 4인치</dd></div>
+          <div><dt>필러·홀 구조</dt><dd>300 nm – 3 μm 수준</dd></div>
+          <div><dt>설계 지원</dt><dd>광학 설계, 시뮬레이션</dd></div>
+          <div><dt>사양</dt><dd>고객 요구에 맞춰 설계</dd></div>
+        </dl>
+        <a class="more" href="#contact" data-product="메타렌즈">이 제품 문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<dialog class="pdlg" id="dlg-c1" aria-labelledby="dlg-c1-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/customizing1.png" alt="특수 마이크로·나노 구조 SEM 이미지" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-c1-t">특수 마이크로·나노 구조 맞춤 제작</h2>
+        <p class="en">Special Micro/Nano Structure Customizing</p>
+        <p class="desc">고객이 요구하는 특수 구조를 포토마스크 설계와 제작부터 가공까지 지원합니다.</p>
+        <ul class="items">
+          <li>포토마스크 설계·제작</li>
+          <li>마이크로·나노 패턴드 기판</li>
+          <li>서브파장 구조</li>
+          <li>바이너리 광학 소자</li>
+          <li>메타렌즈 구조</li>
+        </ul>
+        <a class="more" href="#contact" data-product="맞춤 제작 서비스">문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<dialog class="pdlg" id="dlg-c2" aria-labelledby="dlg-c2-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/customizing2.jpg" alt="소프트 몰드로 복제한 미세유체 칩과 미세 구조" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-c2-t">소프트 몰드 복제</h2>
+        <p class="en">Soft Mold Replication</p>
+        <p class="desc">마스터 몰드를 복제해 소프트 몰드와 임프린트용 몰드를 제작합니다.</p>
+        <ul class="items">
+          <li>PDMS 소프트 몰드 복제</li>
+          <li>나노임프린트 몰드</li>
+          <li>UV 나노임프린트</li>
+          <li>열 임프린트(Thermal NIL)</li>
+          <li>마이크로 컨택 프린팅(µCP) 몰드</li>
+        </ul>
+        <a class="more" href="#contact" data-product="맞춤 제작 서비스">문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<dialog class="pdlg" id="dlg-c3" aria-labelledby="dlg-c3-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/customizing3.jpg" alt="박막 증착 처리한 광학 소자" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-c3-t">박막 증착</h2>
+        <p class="en">Thin Film Deposition</p>
+        <p class="desc">금속, 산화물, 질화물, 유전체 막을 요구 사양에 맞춰 증착합니다.</p>
+        <ul class="items">
+          <li>마그네트론 스퍼터링: 금속, 산화물, 질화물</li>
+          <li>전자빔 증착: 고순도 금속, 유전체 막</li>
+          <li>원자층 증착(ALD): 고정밀 초박막, 컨포멀 막</li>
+          <li>열 증착</li>
+          <li>이온빔 스퍼터링</li>
+          <li>다중 타깃 코스퍼터링</li>
+        </ul>
+        <a class="more" href="#contact" data-product="맞춤 제작 서비스">문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<dialog class="pdlg" id="dlg-c4" aria-labelledby="dlg-c4-t">
+  <button type="button" class="dlg-close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <article class="tile tile--dlg">
+      <figure class="media">
+        <img src="images/customizing4.jpg" alt="표면 처리 전후의 물방울 접촉 비교" decoding="async" onload="this.classList.add('is-ready')">
+      </figure>
+      <div class="tile-body">
+        <h2 id="dlg-c4-t">점착 방지(이형) 처리</h2>
+        <p class="en">Anti-Sticking Treatment</p>
+        <p class="desc">표면 화학 개질 또는 물리적 개질로 미세 구조 표면에 점착과 고착을 방지하는 기능층을 형성합니다.</p>
+        <ul class="items">
+          <li>표면 화학 개질</li>
+          <li>물리적 개질</li>
+          <li>점착 방지 기능층 형성</li>
+        </ul>
+        <a class="more" href="#contact" data-product="맞춤 제작 서비스">문의하기</a>
+      </div>
+    </article>
+</dialog>
+
+<button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+  <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4 8.2 8.2 0 1 0 20 14.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+</button>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>
+      <img src="images/logo-reverse.svg" alt="유중나노 yz-micro nano" width="130" height="42">
+      <address>
+        유중코리아 (Youzhong Korea)<br>
+        경기도 시흥시 배곧동 294-1 골드테크노밸리 406호<br>
+        T 031-431-0209 &nbsp; F 0508-934-9808 &nbsp; sales@yz-micronano.co.kr
+      </address>
+    </div>
+    <div class="foot-note">
+      <p>바이오 분야 제품은 연구용(RUO)으로 공급되며, 임상 진단 목적 사용에는 별도 인허가가 필요합니다.</p>
+      <p>© <span id="year">2026</span> Youzhong Korea. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
